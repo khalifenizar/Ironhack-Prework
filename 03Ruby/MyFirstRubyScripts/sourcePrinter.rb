@@ -1,0 +1,1 @@
+puts "The source file contains: #{IO.read("hello.rb")}"
