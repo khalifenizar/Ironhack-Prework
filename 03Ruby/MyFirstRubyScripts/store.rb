@@ -12,11 +12,14 @@ class ShoppingCart
 
 	def totalSales()
 		sales = 0 # do I need to initialize these?
+		          # yes
 		inCart = 0
 		@contents.each do |lineItem|
 			sales = sales + lineItem.discount()
 			inCart = inCart + 1
 		end
+		# Arrays inherently keep track of their size
+		# @contents.size does the job
 		if(inCart > 5)
 			return sales - (0.10 * sales)
 		else
@@ -36,7 +39,7 @@ class Item
 		@@total = @@total + 1
 	end
 
-	def discount() 
+	def discount()
 		return @msrp
 	end
 
@@ -59,6 +62,8 @@ end
 
 class Houseware < Item
 	def discount()
+		# If @msrp is 100 or less, this returns nil
+		# Try adding a Houseware that costs 75
 		if(@msrp > 100)
 			return @msrp - (0.05 * @msrp)
 		end
