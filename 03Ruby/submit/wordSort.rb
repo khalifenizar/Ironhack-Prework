@@ -1,5 +1,6 @@
 def wordSort(unsorted)
-	if(unsorted.class == ''.class)
+  # You can use the String class directly
+  if(unsorted.class == String)
 		#remove non-alpha characters and spaces
 		splitWords = (unsorted.gsub(/[^a-z ]/i,'')).split(' ')
 		#sort with custom comparator
